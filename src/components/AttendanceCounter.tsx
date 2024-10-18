@@ -17,7 +17,12 @@ export function AttendanceCounter() {
   };
 
   useEffect(() => {
-    fetchAttendanceCount();
+    fetch('/api/attendance')
+      .then((response) => response.json())
+      .then((data) => setCount(data.count))
+      .catch((error) =>
+        console.error('Error fetching attendance count:', error)
+      );
     setIsVisible(true);
   }, []);
 
