@@ -1,6 +1,6 @@
-import { assets } from "@/utils/asset-utils";
-import Image from "next/image";
-import { useState, useEffect, RefObject } from "react";
+import { assets } from '@/utils/asset-utils';
+import Image from 'next/image';
+import { RefObject, useEffect, useState } from 'react';
 
 export const Cursor = ({
   buttonRef,
@@ -32,7 +32,7 @@ export const Cursor = ({
       setCursorPosition({ x, y: newY });
 
       // Move the button down by 150px
-      buttonRef.current.style.transition = "transform 700ms ease-in-out";
+      buttonRef.current.style.transition = 'transform 700ms ease-in-out';
       buttonRef.current.style.transform = `translateY(150px)`;
 
       // Additional 1-second delay

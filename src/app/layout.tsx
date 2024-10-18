@@ -1,9 +1,9 @@
-import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Builder.io Velocity",
-  description: "AI Launch Event!",
+  title: 'AfroFest 2024 - KL',
+  description: 'KL AfroFest 2024 is a celebration of African culture.',
 };
 
 export default function RootLayout({
