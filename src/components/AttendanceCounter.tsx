@@ -8,7 +8,10 @@ export function AttendanceCounter() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    fetch('/api/attendance')
+    fetch('/api/attendance', {
+      method: 'GET',
+      cache: 'no-store',
+    })
       .then((response) => response.json())
       .then((data) => setCount(data.count))
       .catch((error) =>
