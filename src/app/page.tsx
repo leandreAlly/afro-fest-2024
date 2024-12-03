@@ -4,7 +4,9 @@ import { AttendanceCounter } from '@/components/AttendanceCounter';
 import { CountdownTimer } from '@/components/countdown-timer';
 // import { AttendanceCounter } from '@/components/CountUp';
 import { Cursor } from '@/components/cursor';
-import homeImg from '@/images/home.jpeg';
+import ImageSlider from '@/components/ImageSlider';
+import TextSlider from '@/components/Textslider';
+// import homeImg from '@/images/home.jpeg';
 import { assets } from '@/utils/asset-utils';
 import { type Framework, frameworks } from '@/utils/framework-utils';
 import { cn } from '@/utils/tailwind-utils';
@@ -22,7 +24,7 @@ export default function Home() {
   );
   const [showBackground, setShowBackground] = useState(false);
   const [hasAttended, setHasAttended] = useState(false);
-  const [buttonText, setButtonText] = useState('I will be there');
+  const [buttonText, setButtonText] = useState('I will be there🙅‍♂️');
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -51,7 +53,7 @@ export default function Home() {
       if (result.success) {
         setHasAttended(true);
         localStorage.setItem('hasAttended', 'true');
-        setButtonText("You're awesome! See you there!");
+        setButtonText("You're awesome! See you there!🔥");
       } else {
         console.error('Error updating attendance:', result.error);
       }
@@ -105,14 +107,17 @@ export default function Home() {
         {/* Content */}
         <div className="max-w-7xl mt-20 mx-auto">
           <div className="flex flex-col items-center relative z-10">
+            <ImageSlider />
+          </div>
+          <div className="flex flex-col items-center relative z-10">
             {/* Heading */}
-            <Image
+            {/* <Image
               alt="Figma logo"
-              className="inline-block mr-8 -mt-2"
+              className="inline-block -mt-2"
               src={homeImg}
-              width="200"
+              width="350"
               height="200"
-            />
+            /> */}
             <h1
               className={`text-7xl max-w-3xl text-center leading-snug mb-12 ${poppins.className}`}
             >
@@ -145,28 +150,29 @@ export default function Home() {
 
             <AttendanceCounter />
 
-            <p className="mb-8 max-sm:mx-8">
-              <span className="text-gray-300">
+            {/* <p className="mb-8 max-sm:mx-8"> */}
+            <TextSlider />
+            {/* <span className="text-gray-300">
                 Afrofest isn&apos;t just a party, it’s a movement. Join us as we
                 dance across borders, blending beats, cultures, and energies
                 into a night of pure, global connection.
-              </span>
-              {/* <Image
+              </span> */}
+            {/* <Image
               alt="Builder.io logo"
               className="inline-block ml-1 -mt-1"
               width={100}
               height={20}
               src={assets.builder}
             /> */}
-              {/* {' + '} */}
-              {/* <Image
+            {/* {' + '} */}
+            {/* <Image
               alt="Figma logo"
               className="inline-block mx-1"
               width={55}
               height={20}
               src={assets.figmatwo}
             /> */}
-            </p>
+            {/* </p> */}
             {/* Claim ticket button */}
             <div className="mb-8">
               <button
